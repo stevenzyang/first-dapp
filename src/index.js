@@ -92,6 +92,4 @@ function vote(e) {
     refresh()
   })
 }
-window.web3 = web3;
-window.moc = moc;
 window.vote = vote;

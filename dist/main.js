@@ -2032,7 +2032,7 @@ function noop() {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(/*! buffer */ 10).Buffer;
+    Buffer = __webpack_require__(/*! buffer */ 2).Buffer;
   } catch (e) {
   }
 
@@ -20541,7 +20541,7 @@ function fromByteArray (uint8) {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(/*! buffer */ 0).Buffer;
+    Buffer = __webpack_require__(/*! buffer */ 7).Buffer;
   } catch (e) {
   }
 
@@ -23989,7 +23989,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(/*! crypto */ 7);
+    var crypto = __webpack_require__(/*! crypto */ 8);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -25386,7 +25386,7 @@ module.exports = crt
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(/*! buffer */ 8).Buffer;
+    Buffer = __webpack_require__(/*! buffer */ 9).Buffer;
   } catch (e) {
   }
 
@@ -29324,7 +29324,7 @@ module.exports = verify
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(/*! buffer */ 9).Buffer;
+    Buffer = __webpack_require__(/*! buffer */ 10).Buffer;
   } catch (e) {
   }
 
@@ -82037,7 +82037,7 @@ util.inherits = __webpack_require__(/*! inherits */ "./node_modules/inherits/inh
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(/*! util */ 1);
+var debugUtil = __webpack_require__(/*! util */ 0);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -83926,7 +83926,7 @@ Writable.prototype._destroy = function (err, cb) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/stream-http/node_modules/safe-buffer/index.js").Buffer;
-var util = __webpack_require__(/*! util */ 2);
+var util = __webpack_require__(/*! util */ 1);
 
 function copyBuffer(src, target, offset) {
   src.copy(target, offset);
@@ -89302,16 +89302,14 @@ function vote(e) {
     refresh()
   })
 }
-window.web3 = web3;
-window.moc = moc;
 window.vote = vote;
 
 /***/ }),
 
 /***/ 0:
-/*!************************!*\
-  !*** buffer (ignored) ***!
-  \************************/
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -89342,9 +89340,9 @@ window.vote = vote;
 /***/ }),
 
 /***/ 2:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -89398,7 +89396,7 @@ window.vote = vote;
 
 /***/ 7:
 /*!************************!*\
-  !*** crypto (ignored) ***!
+  !*** buffer (ignored) ***!
   \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -89409,7 +89407,7 @@ window.vote = vote;
 
 /***/ 8:
 /*!************************!*\
-  !*** buffer (ignored) ***!
+  !*** crypto (ignored) ***!
   \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
