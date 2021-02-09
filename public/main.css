@@ -1,0 +1,18 @@
+.card {
+    margin: 10px;
+    transition: all ease 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0px 7px 5px 4px #00000014;
+}
+
+.cover {
+    height: 100vh;
+    z-index: 99;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
