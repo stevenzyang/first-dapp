@@ -89265,21 +89265,19 @@ document.getElementById('landing').style.display = 'none'
 let contractAddress = "0x66c871eC4b13df8Fc99D89e952DAc0D95A2c2759";
 const web3 = createAlchemyWeb3("https://eth-goerli.alchemyapi.io/v2/39r5ssBj85JmfOXuKJ25jKWy1ExIoAiQ");
 let moc = new web3.eth.Contract(contractABI, contractAddress);
-document.addEventListener('DOMContentLoaded', () => {
+let account;
+document.addEventListener('DOMContentLoaded', async () => {
   refresh()
   if (web3) {
     document.getElementById('landing').style.display = 'flex'
     document.getElementById('cover').style.display = 'none'
   }
-})
-_metamask_detect_provider__WEBPACK_IMPORTED_MODULE_0___default()().then(provider => {
-  console.log(provider);
+  const provider = await _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_0___default()()
   if (window.ethereum) {
     ethereum
       .enable()
       .then(accounts => {
-        console.log(accounts);
-        // Metamask is ready to go!
+        account = accounts[0];
       })
       .catch(reason => {
         console.log("Metamask error", reason)
@@ -89287,7 +89285,7 @@ _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_0___default()().then(provider
   } else {
     alert("You don't have metamask installed");
   }
-}).catch(e => console.error(e))
+})
 const refresh = () => {
   for (let i = 0; i < 3; i++)
     moc.methods.getItem(i).call()
@@ -89298,7 +89296,7 @@ const refresh = () => {
 function vote(e) {
   console.log(e.id[4])
   moc.methods.vote(e.id[4]).send({
-    from: `0x3D5262395209eA5b9436a8Be6C75E00518F7785F`
+    from: account
   }).then(result => {
     console.log(result)
     refresh()
