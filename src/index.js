@@ -1,4 +1,5 @@
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
+const Web3 = require('web3');
 import detectEthereumProvider from '@metamask/detect-provider';
 
 let contractABI = [
@@ -52,10 +53,11 @@ let contractABI = [
   }
 ]
 document.getElementById('landing').style.display = 'none'
-let contractAddress = "0x66c871eC4b13df8Fc99D89e952DAc0D95A2c2759";
-const web3 = createAlchemyWeb3("https://eth-goerli.alchemyapi.io/v2/39r5ssBj85JmfOXuKJ25jKWy1ExIoAiQ");
+let contractAddress = "0x531705204920537B3a59125668C10aE45fef7Aa8";
+// const web3 = createAlchemyWeb3("https://eth-goerli.alchemyapi.io/v2/o3xlcDgaZlP_qeSfY6lE8afNlsQGDGti");
+const web3 = new Web3("http://127.0.0.1:7545");
 let moc = new web3.eth.Contract(contractABI, contractAddress);
-let account;
+let account = "0x4Dc2aED39EE9984689cfc716944Ce311Fe34980E";
 document.addEventListener('DOMContentLoaded', async () => {
   refresh()
   if (web3) {
