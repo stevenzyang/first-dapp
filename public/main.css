@@ -16,3 +16,12 @@
     justify-content: center;
     align-items: center;
 }
+
+.members {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.members > *{
+    margin-bottom: 20px;
+}

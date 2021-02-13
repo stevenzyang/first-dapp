@@ -16,6 +16,10 @@ contract Vote {
         return votes[addr];
     }
 
+    function getMembers() public view returns (address[] memory) {
+        return members;
+    }
+
     function getVoteCount(address addr) public view returns (uint256) {
         return votes[addr];
     }
@@ -26,14 +30,14 @@ contract Vote {
 
     function addMember(address addr, bytes32 name) public {
         checkPermission();
-        require(name.length != 0, "Name must not be empty");
-        if (memberNames[addr].length == 0) {
+        require(name != 0, "Name must not be empty");
+        if (memberNames[addr] == 0) {
             members.push(addr);
             memberNames[addr] = name;
         }
     }
 
     function checkPermission() private {
-        require (memberNames[msg.sender].length != 0, "User is not a member");
+        require (memberNames[msg.sender] != 0, "User is not a member");
     }
 }

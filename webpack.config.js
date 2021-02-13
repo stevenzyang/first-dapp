@@ -7,4 +7,8 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  loaders: [
+    { test: /\.json$/, loader: 'json' },
+    // other loaders 
+ ]
 };

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOC|DAPP</title>
+  <title>Alchemy MVP</title>
   <meta author="Suyash Sonawane">
   <meta name="description" content="MOC DAPP">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -16,8 +16,8 @@
 
   <div class="details">
     <br>
-    <h1>Mousse on Chain</h1>
-    <h4>A blockchain based Mousse voting platform</h4>
+    <h1>Alchemy MVP</h1>
+    <h4>A blockchain based voting platform</h4>
     <hr>
   </div>
   <div class="cover" id="cover">
@@ -29,18 +29,18 @@
     &nbsp;
     Connecting to BlockChain
   </div>
-  <div class="landing " id="landing">
-    <div class="card" style="width: 18rem;" id="i0">
-      <img class="card-img-top"
-        src="https://www.somethingswanky.com/wp-content/uploads/2013/03/neopolitan-mousse-cake.png"
-        alt="Card image cap">
+  <div>
+    <input id="add-member-name" placeholder="Name">
+    <input id="add-member-address" placeholder="Address"/>
+    <button class="btn btn-primary" onclick="addMember()">Add member</button>
+  </div>
+  <div class="members" id="members">
+    <!-- <div class="card" style="width: 18rem;" id="i0">
       <div class="card-body">
-        <h5 class="card-title">Neapolitan Mousse Cake
-        </h5>
         <button class="btn btn-primary" id="vote0" onclick="vote(this)">Vote <strong id="v0">1</strong></button>
       </div>
-    </div>
-    <div class="card" style="width: 18rem;" id="i1">
+    </div> -->
+    <!-- <div class="card" style="width: 18rem;" id="i1">
       <img class="card-img-top" src="https://www.somethingswanky.com/wp-content/uploads/2013/03/butterscotch-mousse.png"
         alt="Card image cap">
       <div class="card-body">
@@ -57,7 +57,7 @@
         <h5 class="card-title">Chocolate Malted Mousse</h5>
         <button class="btn btn-primary" id="vote2" onclick="vote(this)">Vote <strong id="v2">1</strong></button>
       </div>
-    </div>
+    </div> -->
   </div>
 </body>
 <script src="dist/main.js"></script>
