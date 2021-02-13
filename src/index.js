@@ -3,12 +3,12 @@ const Web3 = require('web3');
 import detectEthereumProvider from '@metamask/detect-provider';
 import contractDef from '../build/contracts/Vote.json';
 
-let account = "0xd5E78fBa79297A369280208F7798C1447594d082";
-let contractAddress = "0x3Cb6aaE6F512d9aCf6AA8dE75Cd725408E18631e";
+let account = "";
+let contractAddress = "0x84FF48db44881BcD0e0cE13cE978f74a85151B7D";
 
 document.getElementById('members').style.display = 'none'
-// const web3 = createAlchemyWeb3("https://eth-goerli.alchemyapi.io/v2/o3xlcDgaZlP_qeSfY6lE8afNlsQGDGti");
-const web3 = new Web3("http://127.0.0.1:7545");
+const web3 = createAlchemyWeb3("https://eth-goerli.alchemyapi.io/v2/o3xlcDgaZlP_qeSfY6lE8afNlsQGDGti");
+// const web3 = new Web3("http://127.0.0.1:7545");
 let contract = new web3.eth.Contract(contractDef.abi, contractAddress);
 document.addEventListener('DOMContentLoaded', async () => {
   refresh()
@@ -16,19 +16,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('members').style.display = 'block'
     document.getElementById('cover').style.display = 'none'
   }
-  // const provider = await detectEthereumProvider()
-  // if (window.ethereum) {
-  //   ethereum
-  //     .enable()
-  //     .then(accounts => {
-  //       account = accounts[0];
-  //     })
-  //     .catch(reason => {
-  //       console.log("Metamask error", reason)
-  //     });
-  // } else {
-  //   alert("You don't have metamask installed");
-  // }
+  const provider = await detectEthereumProvider()
+  if (window.ethereum) {
+    ethereum
+      .enable()
+      .then(accounts => {
+        account = accounts[0];
+      })
+      .catch(reason => {
+        console.log("Metamask error", reason)
+      });
+  } else {
+    alert("You don't have metamask installed");
+  }
 })
 async function refresh() {
   const memberHTMLs = [];
