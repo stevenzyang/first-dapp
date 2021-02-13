@@ -1,5 +1,5 @@
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-const Web3 = require('web3');
+const web3Utils = require('web3-utils');
 import detectEthereumProvider from '@metamask/detect-provider';
 import contractDef from '../build/contracts/Vote.json';
 
@@ -55,7 +55,7 @@ async function addMember(e) {
   const name = document.getElementById("add-member-name").value
   const address = document.getElementById("add-member-address").value
   console.log(name, address);
-  const result = await contract.methods.addMember(address, web3.utils.utf8ToHex(name)).send({from: account});
+  const result = await contract.methods.addMember(address, web3Utils.utf8ToHex(name)).send({from: account});
   console.log(result);
   refresh();
 }
