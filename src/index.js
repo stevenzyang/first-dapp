@@ -57,6 +57,7 @@ async function vote(e) {
 async function addMember(e) {
   const name = document.getElementById("add-member-name").value
   const address = document.getElementById("add-member-address").value
+  console.log(name, web3Utils.utf8ToHex(name), web3Utils.utf8ToHex(name).padEnd(66, "0"));
   const result = await contract.methods.addMember(address, web3Utils.utf8ToHex(name).padEnd(66, "0")).send({from: account});
   console.log(result);
   refresh();
