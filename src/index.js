@@ -10,7 +10,7 @@ let account = "";
 let contractAddress = "0x84FF48db44881BcD0e0cE13cE978f74a85151B7D";
 
 document.getElementById('members').style.display = 'none'
-const web3 = createAlchemyWeb3("https://eth-goerli.alchemyapi.io/v2/o3xlcDgaZlP_qeSfY6lE8afNlsQGDGti");
+const web3 = createAlchemyWeb3("https://test-eth-goerli.alchemyapi.io/v2/MaWOiptJx3EvgsbA2_m-Wm3nV6qMyMxk");
 // const web3 = new Web3("http://127.0.0.1:7545");
 let contract = new web3.eth.Contract(contractDef.abi, contractAddress);
 document.addEventListener('DOMContentLoaded', async () => {
